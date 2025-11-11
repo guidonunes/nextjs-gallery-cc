@@ -1,10 +1,12 @@
-import React from 'react'
+'use client'
+import React, { useState } from 'react'
 
 import { Comment } from '../../utils/utils'
 import styles from './Comment.module.css'
 
 
 export default function Comment() {
+  const [newComments, setNewComments] = useState([]);
 
   const addComment = (newCommentBody: string) => {
 
