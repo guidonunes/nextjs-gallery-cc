@@ -94,5 +94,5 @@ export type CommentData = Record<number, Comment[]>
 export type Comment = {
   id: number
   body: string
-  timestamp: number
+  timestamp: string | number
 }

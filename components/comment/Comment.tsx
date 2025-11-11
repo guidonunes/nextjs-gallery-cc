@@ -1,14 +1,21 @@
 'use client'
 import React, { useState } from 'react'
 
-import { Comment } from '../../utils/utils'
+import { Comment as CommentType } from '../../utils/utils'
 import styles from './Comment.module.css'
+import NewCommentForm from './NewCommentForm'
 
 
 export default function Comment() {
-  const [newComments, setNewComments] = useState([]);
+  const [newComments, setNewComments] = useState<CommentType[]>([]);
 
   const addComment = (newCommentBody: string) => {
+    const newComment: CommentType = {
+      id: Date.now(),
+      body: newCommentBody,
+      timestamp: new Date().toISOString(),
+    };
+    setNewComments((prevComments) => [newComment, ...prevComments]);
 
   };
 
@@ -24,7 +31,7 @@ export default function Comment() {
           </div>
         ))}
       </div>
-
+      <NewCommentForm addComment={addComment} />
     </div>
   );
 }

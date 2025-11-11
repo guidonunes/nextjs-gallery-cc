@@ -4,6 +4,9 @@ import { Artwork } from '../../utils/utils'
 
 import styles from './Featured.module.css'
 import StoredComments from '../comment/StoredComments';
+import Comment from '../comment/Comment';
+import LoadingComments  from '../comment/LoadingComments';
+import { Suspense } from 'react';
 
 
 
@@ -27,9 +30,10 @@ export default function Featured( { objectID, primaryImage, title, artistDisplay
       </div>
       <div className={styles.comments_section}>
         <h3>Comments:</h3>
-        <br />
-
-        <StoredComments id={objectID} />
+        <Suspense fallback={<LoadingComments />}>
+          <StoredComments id={objectID} />
+        </Suspense>
+        <Comment />
       </div>
 
     </div>
