@@ -1,7 +1,19 @@
-import type { NextConfig } from "next";
+const { hostname } = require('os')
 
-const nextConfig: NextConfig = {
-  /* config options here */
-};
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+    compress: false,
+    images: {
+      unoptimized: true,
+      remotePatterns: [
+        {
+          protocol: 'https',
+          hostname: 'images.metmuseum.org',
+          port: '',
+          pathname: '**',
+        }
+      ]
+    }
+}
 
-export default nextConfig;
+module.exports = nextConfig

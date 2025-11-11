@@ -7,7 +7,7 @@ import styles from './Featured.module.css'
 
 
 
-export default function Featured( { primaryImage, title, artistDisplayName, objectDate}: Artwork ) {
+export default function Featured( { objectID, primaryImage, title, artistDisplayName, objectDate}: Artwork ) {
 
   return (
     <div className={styles.featured}>
@@ -20,6 +20,7 @@ export default function Featured( { primaryImage, title, artistDisplayName, obje
 />
       <div className={styles.featuredDetails}>
         <h2 className={styles.title}>{title}</h2>
+        <p>{objectID}</p>
         <p>{artistDisplayName}</p>
         <p>{objectDate}</p>
       </div>
