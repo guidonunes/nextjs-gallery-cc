@@ -51,7 +51,7 @@ export const artData: Artwork[] = [
 ]
 
 export type Artwork = {
-  objectID: number
+  objectID?: number
   primaryImage: string
   title: string
   artistDisplayName: string
