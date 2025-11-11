@@ -18,3 +18,7 @@ This solution specifically focuses on implementing the following modern Next.js 
 * Suspense: Leveraged to create loading UI fallbacks, allowing parts of the page to render progressively as data is fetched, which improves the perceived performance.
 
 * React Hooks: Utilized standard React hooks (like useState, useEffect) within Client Components to manage state and handle side effects.
+
+## 🤖 Extras:
+
+* Implemented switch theme funcionality (light/dark)
