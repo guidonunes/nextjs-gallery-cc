@@ -29,7 +29,7 @@ export default function Featured( { objectID, primaryImage, title, artistDisplay
         <p>{objectDate}</p>
       </div>
       <div className={styles.comments_section}>
-        <h3>Comments:</h3>
+        <h3 className={styles.comments_title}>Comments:</h3>
         <Suspense fallback={<LoadingComments />}>
           <StoredComments id={objectID} />
         </Suspense>

@@ -1,3 +1,13 @@
+
+import { type ClassValue, clsx } from "clsx"
+import { twMerge } from "tailwind-merge"
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
+}
+
+// ... keep any other code you already have, like selectRandomIDs ...
+
 export const selectRandomIDs = (objectIDs: number[], selection: number) => {
   const total = objectIDs.length
 

@@ -1,3 +1,5 @@
+
+
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 
@@ -5,6 +7,7 @@ import Nav from '../components/navigation/Nav'
 import UrlBar from '../components/UrlBar/UrlBar'
 
 import './globals.css'
+import { ThemeProvider } from '@/components/theme-provider'
 
 export const metadata: Metadata = {
   title: 'The Gallery',
@@ -19,11 +22,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <div className="urlBar">
-          <UrlBar baseURL="http://localhost:4001" />
-        </div>
-        <Nav />
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <div className="urlBar">
+            <UrlBar baseURL="http://localhost:4001" />
+          </div>
+          <Nav />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   )

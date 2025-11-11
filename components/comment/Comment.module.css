@@ -15,9 +15,13 @@
 
 .comment_form{
   margin: 1em 0 0 0;
+
 }
 
 .comment_form_text{
+  background-color: #fff;
+  color: #2f2f2f;
+  border: 1px solid #E0E0E0;
   width: 100%;
   margin-bottom: 4px;
 }
@@ -38,4 +42,8 @@
   background: #3A10E5;
   color: #FFFAE5;
   font-size: 16px;
+}
+
+:global(.dark) .comments_section {
+  background: #2F2F2F;
 }

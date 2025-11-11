@@ -4,6 +4,7 @@ import { useSelectedLayoutSegments } from 'next/navigation'
 import Button from '../button/Button'
 
 import styles from './Nav.module.css'
+import ModeToggle from '../ModeToggle';
 
 export default function Nav() {
   const segments = useSelectedLayoutSegments()
@@ -17,6 +18,9 @@ export default function Nav() {
         </li>
         <li className={lastSegment == 'browse' ? styles.selected : ''}>
           <Button label="Browse" href="/browse" />
+        </li>
+        <li>
+          <ModeToggle />
         </li>
       </ul>
     </nav>
