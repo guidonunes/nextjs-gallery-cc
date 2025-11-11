@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { Artwork } from '../../utils/utils'
 
 import styles from './Featured.module.css'
+import StoredComments from '../comment/StoredComments';
 
 
 
@@ -20,9 +21,15 @@ export default function Featured( { objectID, primaryImage, title, artistDisplay
 />
       <div className={styles.featuredDetails}>
         <h2 className={styles.title}>{title}</h2>
-        <p>{objectID}</p>
+
         <p>{artistDisplayName}</p>
         <p>{objectDate}</p>
+      </div>
+      <div className={styles.comments_section}>
+        <h3>Comments:</h3>
+        <br />
+
+        <StoredComments id={objectID} />
       </div>
 
     </div>
