@@ -18,8 +18,14 @@ export default function SearchBar({ placeholder }: { placeholder: string }) {
     const term = target.searchTerm.value;
 
     // Set `query` if `term`
-    // Remove `query` if not `term`
+    if (term) {
+      params.set('query', term);
+    }else {
+      params.delete('query');
+    }
     // Replace path
+    router.replace(`${pathname()}?${params.toString()}`);
+    event.preventDefault();
   };
 
   return (
@@ -27,7 +33,7 @@ export default function SearchBar({ placeholder }: { placeholder: string }) {
       <input
         className={styles.search_term}
         name="searchTerm"
-        defaultValue=""
+        defaultValue={searchParams.get('query') || '' }
         placeholder={placeholder}
       />
       <button className={styles.search_button} type="submit">
